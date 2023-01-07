@@ -1,7 +1,7 @@
 package com.example.shopapp.data.di
 
-import com.example.shopapp.Utils.BASE_URL
-import com.example.shopapp.data.network.ProductsApi
+import com.example.shopapp.utils.Utils.BASE_URL
+import com.example.shopapp.data.network.StoreApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -9,7 +9,6 @@ import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
-import java.time.Duration
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
@@ -49,8 +48,8 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideApiService(retrofit: Retrofit): ProductsApi {
-        return retrofit.create(ProductsApi::class.java)
+    fun provideApiService(retrofit: Retrofit): StoreApi {
+        return retrofit.create(StoreApi::class.java)
     }
 
 }

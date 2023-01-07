@@ -7,7 +7,7 @@ import javax.inject.Inject
 
 
 @ActivityRetainedScoped
-class AppDataRepository @Inject constructor(
+class Repository @Inject constructor(
     remoteDataSource: RemoteDataSource,
     localDataSource: LocalDataSource
 ) {
