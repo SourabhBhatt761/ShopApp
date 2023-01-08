@@ -1,27 +1,25 @@
 package com.example.shopapp.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.viewModels
-import androidx.lifecycle.ViewModelProvider
-import com.example.shopapp.R
+import androidx.appcompat.app.AppCompatActivity
+import com.example.shopapp.databinding.ActivityMainBinding
 import com.example.shopapp.utils.NetworkResult
 import com.example.shopapp.viewmodel.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private val mainViewModel by viewModels<MainViewModel>()
+    private lateinit var binding : ActivityMainBinding
     private val TAG = "MainActivity"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         //old method
 //        mainViewModel = ViewModelProvider(this)[MainViewModel::class.java]
@@ -44,6 +42,11 @@ class MainActivity : AppCompatActivity() {
 
             when(it){
                 is NetworkResult.Success ->{
+
+                    val productsAdapter = ProductsAdapter()
+                    productsAdapter.setData(it.data!!)
+                    binding.recyclerView.adapter = productsAdapter
+
                     Log.i(TAG,"response"+ it.data)
 
                 }
