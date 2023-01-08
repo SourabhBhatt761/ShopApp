@@ -6,11 +6,11 @@ import retrofit2.Response
 import javax.inject.Inject
 
 class RemoteDataSource @Inject constructor(
-    val storeApi : StoreApi
+    private val storeApi : StoreApi
 ){
 
 
-    suspend fun getAllProducts() : Response<ProductsResponse> {
+    suspend fun getAllProducts() : Response<List<ProductsResponse>> {
         return storeApi.getAllProducts();
     }
 }

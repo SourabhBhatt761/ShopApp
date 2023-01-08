@@ -16,8 +16,8 @@ import javax.inject.Inject
 @HiltViewModel
 class MainViewModel @Inject constructor(private val repository: Repository) : ViewModel() {
 
-    private val _products = MutableLiveData<NetworkResult<ProductsResponse>>()
-    val apiProducts : LiveData<NetworkResult<ProductsResponse>> = _products
+    private val _products = MutableLiveData<NetworkResult<List<ProductsResponse>>>()
+    val apiProducts : LiveData<NetworkResult<List<ProductsResponse>>> = _products
 
 
     fun getAllProducts(){
@@ -36,7 +36,7 @@ class MainViewModel @Inject constructor(private val repository: Repository) : Vi
     }
 
 
-    private fun handleNetworkResponse(response: Response<ProductsResponse>): NetworkResult<ProductsResponse> {
+    private fun handleNetworkResponse(response: Response<List<ProductsResponse>>): NetworkResult<List<ProductsResponse>> {
         return if (response.isSuccessful) {
             NetworkResult.Success(response.body()!!)
         } else if (response.message().toString().contains("timeout")) {

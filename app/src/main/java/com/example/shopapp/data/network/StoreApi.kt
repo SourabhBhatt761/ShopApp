@@ -8,6 +8,6 @@ interface StoreApi {
 
 
     @GET("products")
-    suspend fun getAllProducts() : Response<ProductsResponse>
+    suspend fun getAllProducts() : Response<List<ProductsResponse>>
 
 }
