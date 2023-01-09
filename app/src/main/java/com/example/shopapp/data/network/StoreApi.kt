@@ -7,7 +7,13 @@ import retrofit2.http.GET
 interface StoreApi {
 
 
-    @GET("products")
+    @GET("/products")
     suspend fun getAllProducts() : Response<List<ProductsResponse>>
+
+    @GET("/products/categories")
+    suspend fun getAllCategories() : Response<List<ProductsResponse>>
+
+    @GET("/products/category/jewelery")
+    suspend fun getSpecificCategory() : Response<List<ProductsResponse>>
 
 }

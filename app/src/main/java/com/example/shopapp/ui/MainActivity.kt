@@ -2,6 +2,8 @@ package com.example.shopapp.ui
 
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.example.shopapp.databinding.ActivityMainBinding
@@ -13,7 +15,8 @@ import dagger.hilt.android.AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private val mainViewModel by viewModels<MainViewModel>()
-    private lateinit var binding : ActivityMainBinding
+    private lateinit var binding: ActivityMainBinding
+    private val productsAdapter by lazy { ProductsAdapter() }
     private val TAG = "MainActivity"
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,41 +24,53 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        //old method
-//        mainViewModel = ViewModelProvider(this)[MainViewModel::class.java]
+        fetchAllProductList()
 
-//was learning about threads and coroutines
-//        thread {
-//
-//        }
-//
-//        CoroutineScope(Dispatchers.IO).launch {
-//
-//        }
-//
-//        GlobalScope.launch(Dispatchers.IO){
-//
-//        }
+    }
 
-        Log.i(TAG,"products "+ mainViewModel.getAllProducts())
-        mainViewModel.apiProducts.observe(this) {
+    private fun fetchAllProductList() {
 
-            when(it){
-                is NetworkResult.Success ->{
+        //api call
+        mainViewModel.getAllProducts()
 
-                    val productsAdapter = ProductsAdapter()
-                    productsAdapter.setData(it.data!!)
+        showShimmerEffect()
+
+        //fetch the data
+        mainViewModel.apiProducts.observe(this) { response ->
+
+            when (response) {
+                is NetworkResult.Success -> {
+
+                    response.data?.let { productsAdapter.setData(it) }
                     binding.recyclerView.adapter = productsAdapter
 
-                    Log.i(TAG,"response"+ it.data)
-
+                    Log.i(TAG, "response" + response.data)
+                    hideShimmerEffect()
+                    binding.recyclerView.visibility = View.VISIBLE
                 }
-                else -> {
-                    Log.i(TAG,"something fishy")
+                is NetworkResult.Error -> {
+                    hideShimmerEffect()
+                    Toast.makeText(
+                        this,
+                        response.message.toString(),
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+                is NetworkResult.Loading -> {
+                    showShimmerEffect()
                 }
             }
-
-
         }
+    }
+
+    private fun hideShimmerEffect() {
+        binding.shimmerLayout.stopShimmer()
+        binding.shimmerLayout.visibility = View.GONE
+    }
+
+    private fun showShimmerEffect() {
+        binding.shimmerLayout.startShimmer()
+        binding.shimmerLayout.visibility = View.VISIBLE
+
     }
 }

@@ -13,4 +13,129 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+
+
+    <!--small poppins-->
+    <style name="Extra_Small_PoppinsTextView_light" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="fontFamily">@font/poppins_light</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/extra_small_text_size</item>
+    </style>
+    <style name="Extra_Small_PoppinsTextView_regular" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="fontFamily">@font/poppins</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/extra_small_text_size</item>
+    </style>
+    <style name="Extra_Small_PoppinsTextView_medium" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="fontFamily">@font/poppins_medium</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/extra_small_text_size</item>
+    </style>
+    <style name="Extra_Small_PoppinsTextView_semi_bold" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="fontFamily">@font/poppins_semibold</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/extra_small_text_size</item>
+    </style>
+
+    <style name="Small_PoppinsTextView_regular" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="fontFamily">@font/poppins</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/small_text_size</item>
+    </style>
+    <style name="Small_PoppinsTextView_medium" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="fontFamily">@font/poppins_medium</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/small_text_size</item>
+    </style>
+    <style name="Small_PoppinsTextView_semiBold" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="fontFamily">@font/poppins_semibold</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/small_text_size</item>
+    </style>
+    <style name="Small_PoppinsTextView_bold" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="fontFamily">@font/poppins_bold</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/small_text_size</item>
+    </style>
+
+
+
+    <!--medium poppins-->
+    <style name="Medium_PoppinsTextView_medium" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="fontFamily">@font/poppins_medium</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/medium_text_size</item>
+    </style>
+    <style name="Medium_PoppinsTextView_semiBold" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="fontFamily">@font/poppins_semibold</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/medium_text_size</item>
+    </style>
+    <style name="Medium_PoppinsTextView_bold" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="fontFamily">@font/poppins_bold</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/medium_text_size</item>
+    </style>
+
+
+    <!--semi large poppins-->
+    <style name="Semi_Large_PoppinsTextView_medium" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="fontFamily">@font/poppins_medium</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/semi_large_text_size</item>
+    </style>
+    <style name="Semi_Large_PoppinsTextView_semiBold" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="fontFamily">@font/poppins_semibold</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/semi_large_text_size</item>
+    </style>
+    <style name="Semi_Large_PoppinsTextView_Bold" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="fontFamily">@font/poppins_bold</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/semi_large_text_size</item>
+    </style>
+
+
+    <!--large poppins-->
+    <style name="Large_PoppinsTextView_medium" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="fontFamily">@font/poppins_medium</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/large_text_size</item>
+    </style>
+    <style name="Large_PoppinsTextView_semiBold" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="fontFamily">@font/poppins_semibold</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/large_text_size</item>
+    </style>
+    <style name="Large_PoppinsTextView_Bold" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="fontFamily">@font/poppins_bold</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/large_text_size</item>
+    </style>
+
+
+    <!--Extra large poppins-->
+    <style name="Extra_Large_PoppinsTextView_Bold" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="fontFamily">@font/poppins_bold</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/extra_large_text_size</item>
+    </style>
+    <style name="Extra_Large_PoppinsTextView_medium" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="fontFamily">@font/poppins_medium</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/extra_large_text_size</item>
+    </style>
+    <style name="Extra_Large_PoppinsTextView_semiBold" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="fontFamily">@font/poppins_semibold</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/extra_large_text_size</item>
+    </style>
+
+    <!--super large-->
+    <style name="Super_Large_PoppinsTextView_Bold" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="fontFamily">@font/poppins_bold</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/super_large_text_size</item>
+    </style>
 </resources>

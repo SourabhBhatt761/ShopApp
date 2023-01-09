@@ -1,10 +1,12 @@
 package com.example.shopapp.ui
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
+import com.example.shopapp.R
 import com.example.shopapp.data.network.model.ProductsResponse
 import com.example.shopapp.databinding.ProductsItemLayoutBinding
 import com.example.shopapp.utils.MyDiffUtil
@@ -35,10 +37,11 @@ class ProductsAdapter : RecyclerView.Adapter<ProductsAdapter.ViewHolder>() {
         val item = products[position]
         holder.binding.apply {
 
+            //load image using coil
             productIv.load(item.image) {
+                placeholder(R.drawable.place_holder_img)
                 crossfade(true)
-                error(coil.base.R.drawable.ic_100tb)
-                transformations()
+                error(R.drawable.place_holder_img)
             }
 
             titleTv.text = item.title
