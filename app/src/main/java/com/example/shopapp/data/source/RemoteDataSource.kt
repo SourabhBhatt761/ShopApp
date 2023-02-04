@@ -13,4 +13,12 @@ class RemoteDataSource @Inject constructor(
     suspend fun getAllProducts() : Response<List<ProductsResponse>> {
         return storeApi.getAllProducts();
     }
+
+    suspend fun getAllCategories() : Response<List<String>> {
+        return storeApi.getAllCategories();
+    }
+
+    suspend fun getSpecificCategory(category : String) : Response<List<ProductsResponse>> {
+        return storeApi.getSpecificCategory(category)
+    }
 }

@@ -3,6 +3,7 @@ package com.example.shopapp.data.network
 import com.example.shopapp.data.network.model.ProductsResponse
 import retrofit2.Response
 import retrofit2.http.GET
+import retrofit2.http.Path
 
 interface StoreApi {
 
@@ -11,9 +12,9 @@ interface StoreApi {
     suspend fun getAllProducts() : Response<List<ProductsResponse>>
 
     @GET("/products/categories")
-    suspend fun getAllCategories() : Response<List<ProductsResponse>>
+    suspend fun getAllCategories() : Response<List<String>>
 
-    @GET("/products/category/jewelery")
-    suspend fun getSpecificCategory() : Response<List<ProductsResponse>>
+    @GET("/products/category/{category}")
+    suspend fun getSpecificCategory(@Path ("category") category: String) : Response<List<ProductsResponse>>
 
 }
