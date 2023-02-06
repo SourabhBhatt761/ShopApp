@@ -1,44 +1,37 @@
 package com.example.shopapp.ui
 
 import android.os.Bundle
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.shopapp.R
-import com.example.shopapp.databinding.ActivityMainBinding
-import com.google.android.material.bottomnavigation.BottomNavigationView
-import dagger.hilt.android.AndroidEntryPoint
+import com.example.shopapp.databinding.ActivityTestBottomNavigationBinding
 
+class TestBottomNavigation : AppCompatActivity() {
 
-@AndroidEntryPoint
-class MainActivity : AppCompatActivity() {
-
-    private lateinit var binding: ActivityMainBinding
-    private val TAG = "MainActivity"
+    private lateinit var binding: ActivityTestBottomNavigationBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+
+        binding = ActivityTestBottomNavigationBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        val navView: BottomNavigationView = binding.navView
 
+        val navController =
+            findNavController(R.id.nav_host_fragment_activity_test_bottom_navigation)
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         val appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_home,
-                R.id.nav_cart,
-                R.id.nav_profile
+                R.id.nav_home, R.id.nav_cart, R.id.nav_profile
             )
         )
-        val navController = navHostFragment.navController
-
         setupActionBarWithNavController(navController, appBarConfiguration)
-        binding.navView.setupWithNavController(navController)
+        navView.setupWithNavController(navController)
     }
-
 }
