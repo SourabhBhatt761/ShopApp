@@ -39,7 +39,7 @@ class HomeFragment : Fragment() {
 
         fetchAllCategories()
         chipSelectionListener()
-
+        fetchAllProductList()
 
         return binding.root
     }
@@ -122,7 +122,7 @@ class HomeFragment : Fragment() {
         showShimmerEffect()
 
         //fetch the data
-        mainViewModel.apiProducts.observe(this) { response ->
+        mainViewModel.apiProducts.observe(viewLifecycleOwner) { response ->
 
             when (response) {
                 is NetworkResult.Success -> {

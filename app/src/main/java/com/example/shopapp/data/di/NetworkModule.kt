@@ -1,7 +1,7 @@
 package com.example.shopapp.data.di
 
-import com.example.shopapp.utils.Utils.BASE_URL
 import com.example.shopapp.data.network.StoreApi
+import com.example.shopapp.utils.Constants.BASE_URL
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
