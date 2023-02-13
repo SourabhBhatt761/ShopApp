@@ -1,4 +1,4 @@
-package com.example.shopapp.ui.ui.home
+package com.example.shopapp.ui.fragments.home
 
 import android.os.Bundle
 import android.util.Log
@@ -6,15 +6,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.activity.viewModels
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.example.shopapp.data.network.model.ProductsResponse
 import com.example.shopapp.databinding.ChoiceChipBinding
 import com.example.shopapp.databinding.FragmentHomeBinding
-import com.example.shopapp.ui.ProductsAdapter
+import com.example.shopapp.ui.adapters.ProductsAdapter
 import com.example.shopapp.utils.NetworkResult
-import com.example.shopapp.viewmodel.MainViewModel
+import com.example.shopapp.ui.viewmodel.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

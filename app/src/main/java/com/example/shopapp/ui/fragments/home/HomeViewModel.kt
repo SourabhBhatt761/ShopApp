@@ -1,4 +1,4 @@
-package com.example.shopapp.ui.ui.home
+package com.example.shopapp.ui.fragments.home
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

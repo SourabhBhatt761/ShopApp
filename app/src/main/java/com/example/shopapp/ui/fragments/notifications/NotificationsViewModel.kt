@@ -1,4 +1,4 @@
-package com.example.shopapp.ui.ui.notifications
+package com.example.shopapp.ui.fragments.notifications
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
